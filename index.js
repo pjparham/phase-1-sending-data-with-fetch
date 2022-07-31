@@ -29,13 +29,13 @@ const configurationObject = {
 function submitData(inputName,inputEmail){
     return fetch("http://localhost:3000/users", {
         method: "POST",
-        headers: {
+        headers: { 
             "Content-Type": "application/json",
             "Accept": "application/json",
-        },
+        }, 
         body: JSON.stringify({
-            name: `${inputName}`,
-            email: `${inputEmail}`,
+            name: inputName,
+            email: inputEmail,
         }),
     })
     .then(function (response) {
@@ -52,3 +52,4 @@ function submitData(inputName,inputEmail){
         document.body.innerHTML = error.message
     })
 }
+//headers are to tell it what type of data we are sending and accepting
